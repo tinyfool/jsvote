@@ -1,0 +1,39 @@
+.jsvote {
+	margin-top:2px;
+	width:26px;
+}
+.jsvoteNone {
+  
+  margin-top:2px;
+	width:26px;
+	
+}
+.jsvote_up {
+  width:20px;
+	height:20px;
+	margin-bottom:2px;
+	background:url("img/vote.png") scroll no-repeat -23px 0;
+}
+.jsvote_upover {
+	background:url("img/vote.png") scroll no-repeat 0 0;
+}
+.jsvote_uppressed {
+  background:url("img/vote.png") scroll no-repeat 0 0;
+}
+.jsvote_count {
+	
+	width:20px;
+	height:20px;
+}
+.jsvote_down{
+  width:20px;
+	height:20px;
+	background:url("img/vote.png") scroll no-repeat -23px -22px;
+}
+.jsvote_downover  {
+	background:url("img/vote.png") scroll no-repeat 0px -22px;
+}
+.jsvote_downpressed {
+	background:url("img/vote.png") scroll no-repeat 0px -22px;
+}
+
