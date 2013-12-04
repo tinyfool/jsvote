@@ -24,11 +24,11 @@
     function votestat(vote,stat,init) {
 			
 			var oldStat = vote.attr("vote");
-			gostat(stat);
+			gostat(vote,stat);
 			if(!init) {
 				var ret = vote.trigger("votechange",stat);
 				if(!ret)
-					gostat(oldStat);
+					gostat(vote,oldStat);
 			}
 		}
 		
