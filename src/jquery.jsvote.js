@@ -1,29 +1,34 @@
 ;(function($){
   $.fn.extend({jsvote:function(){
     
-    function votestat(vote,stat,init) {
+		function gostat(vote,stat) {
 			
       if(stat=="") {
 				
 				vote.attr("vote","");
 				vote.up.removeClass('jsvote_uppressed');
 				vote.down.removeClass('jsvote_downpressed');
-				if(!init)
-				  vote.trigger("votechange","");
 			}else if(stat=="up"){
 				
 				vote.attr("vote","up");
 				vote.up.addClass('jsvote_uppressed');
 				vote.down.removeClass('jsvote_downpressed');
-				if(!init)
-				  vote.trigger("votechange","up");
 			}else	if(stat=="down"){
 
 				vote.attr("vote","down");
 				vote.up.removeClass('jsvote_uppressed');
 				vote.down.addClass('jsvote_downpressed');
-				if(!init)
-				  vote.trigger("votechange","down");
+			}
+		}
+		
+    function votestat(vote,stat,init) {
+			
+			var oldStat = vote.attr("vote");
+			gostat(stat);
+			if(!init) {
+				var ret = vote.trigger("votechange",stat);
+				if(!ret)
+					gostat(oldStat);
 			}
 		}
 		
